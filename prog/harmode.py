@@ -11,14 +11,14 @@ if __name__=='__main__':
     if n==0:
         print("Illegal value of n", file=sys.stderr)
         exit(1)
-    x=float(input("x="))
+    x=int(input("x="))
     if x==0:
         print("Illegal value of x", file=sys.stderr)
         exit(1)
     a=x
     s, k=a, 1
-    while math.fabs(a)>eps:
+    while math.fabs(a)<eps:
         a*=((-x**2/4)/(k+1)*(k+1+n))
         s+=a
-        k=k+1
-    print(f"J{n}({x})={(x/2)**n*s}")
+        k+=1
+    print(f"J {n}({x})={(x/2)**n*s}")
