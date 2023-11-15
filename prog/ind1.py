@@ -3,7 +3,7 @@
 import sys
 if __name__=='__main__':
     c=int(input("value c? "))
-    if c<0 and c>9:
+    if c<0 or c>9:
         print("Error!", file=sys.stderr)
         exit(1)
     elif c==1:
